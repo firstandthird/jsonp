@@ -1,0 +1,45 @@
+{
+  "name": "quick-jsonp",
+  "version": "1.0.0",
+  "description": "Quick JSONP creator",
+  "main": "dist/quick-jsonp.js",
+  "module": "lib/quick-jsonp.js",
+  "scripts": {
+    "start": "scriptkit",
+    "build": "scriptkit build",
+    "dev": "scriptkit dev",
+    "test": "cat test/quickjsonp.test.dist.js | tape-run --static . --browser phantomjs --render tap-spec",
+    "prepublish": "scriptkit"
+  },
+  "repository": "https://github.com/firstandthird/quick-jsonp",
+  "author": "First+Third",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint-config-firstandthird": "3.2.0",
+    "eslint-plugin-import": "2.2.0",
+    "phantomjs": "2.1.7",
+    "scriptkit": "0.0.22",
+    "tap-spec": "4.1.1",
+    "tape-rollup": "4.6.4",
+    "tape-run": "2.1.5"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true
+    },
+    "extends": "firstandthird"
+  },
+  "scriptkit": {
+    "files": {
+      "dist/quickjsonp.js": "lib/quickjsonp.js",
+      "test/quickjsonp.test.dist.js": "test/quickjsonp.test.js"
+    },
+    "scripts": {
+      "commonjs": {
+        "ignore": [
+          "node_modules/tape-rollup/*"
+        ]
+      }
+    }
+  }
+}
