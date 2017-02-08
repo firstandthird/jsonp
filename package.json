@@ -1,17 +1,17 @@
 {
-  "name": "quick-jsonp",
+  "name": "@firstandthird/jsonp",
   "version": "1.0.0",
   "description": "Quick JSONP creator",
-  "main": "dist/quick-jsonp.js",
-  "module": "lib/quick-jsonp.js",
+  "main": "dist/jsonp.js",
+  "module": "index.js",
   "scripts": {
     "start": "scriptkit",
     "build": "scriptkit build",
     "dev": "scriptkit dev",
-    "test": "cat test/quickjsonp.test.dist.js | tape-run --static . --browser phantomjs --render tap-spec",
+    "test": "cat test/jsonp.test.dist.js | tape-run --static . --browser phantomjs --render tap-spec",
     "prepublish": "scriptkit"
   },
-  "repository": "https://github.com/firstandthird/quick-jsonp",
+  "repository": "https://github.com/firstandthird/jsonp",
   "author": "First+Third",
   "license": "MIT",
   "devDependencies": {
@@ -21,7 +21,7 @@
     "scriptkit": "0.0.22",
     "tap-spec": "4.1.1",
     "tape-rollup": "4.6.4",
-    "tape-run": "2.1.5"
+    "tape-run": "2.1.6"
   },
   "eslintConfig": {
     "env": {
@@ -31,8 +31,8 @@
   },
   "scriptkit": {
     "files": {
-      "dist/quickjsonp.js": "lib/quickjsonp.js",
-      "test/quickjsonp.test.dist.js": "test/quickjsonp.test.js"
+      "dist/jsonp.js": "index.js",
+      "test/jsonp.test.dist.js": "test/jsonp.test.js"
     },
     "scripts": {
       "commonjs": {

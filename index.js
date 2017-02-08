@@ -5,7 +5,7 @@ const getRandomInt = function(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 };
 
-export default function quickJSONP(url, done, queryname = 'callback') {
+export default function jsonp(url, done, queryname = 'callback') {
   const callbackName = `jsonp_${getRandomInt(1, 100)}`;
   window[callbackName] = done;
 

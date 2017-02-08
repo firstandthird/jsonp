@@ -1,1 +1,1 @@
-# Quick JSONP
+# JSONP

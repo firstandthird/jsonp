@@ -1,5 +1,5 @@
 import test from 'tape-rollup';
-import quickJSONP from '../lib/quickjsonp';
+import jsonp from '../index';
 
 const getCallbackName = () => Object.keys(window)
   .filter(prop => prop.indexOf('jsonp_') === 0 && typeof window[prop] === 'function');
@@ -13,7 +13,7 @@ const testURL = 'test/quickjsonp.test.js';
 test('jsonp', assert => {
   let called = false;
 
-  quickJSONP(testURL, () => {
+  jsonp(testURL, () => {
     called = true;
     assert.ok(called, 'callback gets called upon completion');
     assert.end();
