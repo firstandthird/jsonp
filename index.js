@@ -10,6 +10,9 @@ export default function jsonp(url, done, queryname = 'callback') {
   window[callbackName] = done;
 
   const script = document.createElement('script');
-  script.src = `${url}&${queryname}=${callbackName}`;
+
+  const connector = (url.split('?')[1]) ? '&' : '?';
+
+  script.src = `${url}${connector}${queryname}=${callbackName}`;
   document.head.appendChild(script);
 }
